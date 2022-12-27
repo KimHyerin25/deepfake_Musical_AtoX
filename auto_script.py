@@ -6,8 +6,8 @@ import shutil
 
 def upload_png(sftp, png_path):
   png_name = Path(png_path).name
-  remote_path = f'/home/hyerin/userdata/deepfake_hyerin/{png_name}'
-#   local_path = f'/Users/hyerin_m/Pictures/label_studio_{get_datetime()}.squlite3'
+  remote_path = f'/home/userdata/{png_name}'
+#   local_path = f'/Users/_{get_datetime()}.squlite3'
 
 #   sftp.get(remote_path, local_path) 
   sftp.put(png_path, remote_path)
@@ -16,7 +16,7 @@ def upload_png(sftp, png_path):
   return remote_path
 
 def download_mp4(sftp, png_path):
-    remote_path = f'/home/hyerin/userdata/deepfake_hyerin/{Path(png_path).stem}.mp4'
+    remote_path = f'/home/userdata/{Path(png_path).stem}.mp4'
     local_path = f'./generated_mp4/{Path(png_path).stem}.mp4'
     sftp.get(remote_path, local_path)
     shutil.copyfile(local_path, "./generated.mp4")
@@ -24,10 +24,10 @@ def download_mp4(sftp, png_path):
 
 
 def get_ssh_and_sftp():
-    host = "163.239.103.42" 
-    port = 36000
-    username = "hyerin"  # example
-    password = '2mango!' # example
+    host = {write your host} 
+    port = {write your port}
+    username = # example
+    password = # example
 
     ssh = paramiko.SSHClient()
     ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
@@ -39,7 +39,7 @@ def get_ssh_and_sftp():
 
 
 def exec_deepfake(ssh, remote_path):
-    ssh.exec_command(f'python3 /home/hyerin/userdata/deepfake_hyerin/first-order-model/deepfake.py --source_image={remote_path}')
+    ssh.exec_command(f'python3 /home/userdata/deepfake.py --source_image={remote_path}')
     
     return 
 
