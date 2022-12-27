@@ -29,7 +29,7 @@ while webcam.isOpened():
         cv2.imshow("test", frame)
     if cv2.waitKey(1) & 0xFF == ord('o'):
         cv2.putText(frame, str, (0, 100), cv2.FONT_HERSHEY_SIMPLEX, 1, (100, 255, 100))
-        png_list = list(Path('/Users/hyerin_m/Desktop/vscode/').rglob('*.png'))
+        png_list = list(Path('/Users/').rglob('*.png'))
         c = 0
         for i in png_list:
             num_stem = i.stem.split('_')[-1]
