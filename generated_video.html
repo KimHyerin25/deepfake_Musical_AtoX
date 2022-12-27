@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>The Woman in Me</title>
+</head>
+
+<body>
+    <!-- <h1>
+        <a>GENERETAED</a>
+    </h1> -->
+    <!-- <video src="img/merin_generated.mp4" controls muted loop poster="img/merin.jpg">
+
+    </video> -->
+    <button onclick="openFullscreen();">Open Video in Fullscreen Mode</button>
+
+    <video width="80%" autoplay muted controls>
+
+        <source src="generated.mp4" type="video/mp4">
+
+    </video>
+
+    <audio controls>
+      <source src="audio/gotong.wav" type="audio/wav">
+    </audio>
+
+    <audio autoplay controls>
+      <source src="audio/kkioitsoyo.wav" allow ="autoplay" type="audio/wav">
+    </audio>
+
+    <audio controls>
+      <source src="audio/umjigijianayo.wav"  type="audio/wav">
+    </audio>
+ 
+    
+    <script>
+
+        var elem = document.getElementById("myvideo");
+        
+        function openFullscreen() {
+        
+          if (elem.requestFullscreen) {
+        
+            elem.requestFullscreen();
+        
+          } else if (elem.mozRequestFullScreen) { /* Firefox */
+        
+            elem.mozRequestFullScreen();
+        
+          } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
+        
+            elem.webkitRequestFullscreen();
+        
+          } else if (elem.msRequestFullscreen) { /* IE/Edge */
+        
+            elem.msRequestFullscreen();
+        
+          }
+        
+        }
+        
+    </script>
+</body>
+
+</html>
